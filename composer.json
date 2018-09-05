@@ -1,0 +1,32 @@
+{
+  "name": "iceproductionz/laravel-migrator",
+  "description": "description_text",
+  "minimum-stability": "stable",
+  "license": "mit",
+  "authors": [
+    {
+      "name": "Musarurwa Chanakira",
+      "email": "musa@iceproductionz.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "IceProductionz\\LaravelMigrator\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "IceProductionzTests\\LaravelMigrator\\Unit\\": "tests/unit/",
+      "IceProductionzTests\\LaravelMigrator\\Support\\": "tests/_support/"
+    },
+    "classmap": [
+      "tests/"
+    ]
+  },
+  "require": {
+    "symfony/console": "^4.1",
+    "silex/api": "^2.3",
+    "symfony/process": "^4.1",
+    "symfony/event-dispatcher": "^4.1"
+  }
+}
