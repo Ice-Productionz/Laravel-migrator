@@ -3,6 +3,7 @@
 namespace IceProductionz\LaravelMigrator\Service\Runner;
 
 use IceProductionz\LaravelMigrator\Migration\Collection;
+use IceProductionz\LaravelMigrator\Migration\Manager\Manager;
 
 /**
  * Class Upgrade
@@ -15,15 +16,21 @@ class Upgrade implements Runner
      * @var Collection
      */
     private $migrations;
+    /**
+     * @var Manager
+     */
+    private $manager;
 
     /**
      * Upgrade constructor.
      *
      * @param Collection $migrations
+     * @param Manager    $manager
      */
-    public function __construct(Collection $migrations)
+    public function __construct(Collection $migrations, Manager $manager)
     {
         $this->migrations = $migrations;
+        $this->manager = $manager;
     }
 
     /**
@@ -33,7 +40,15 @@ class Upgrade implements Runner
     {
         foreach ($this->migrations->all() as $migration)
         {
+            if ($this->manager->isMigrated($migration)) {
+                continue;
+            }
+
+            $this->manager->upgradeStarted($migration);
+
             $migration->up();
+
+            $this->manager->upgradeCompleted($migration);
         }
     }
 }

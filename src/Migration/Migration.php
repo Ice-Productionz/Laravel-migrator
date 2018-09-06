@@ -4,7 +4,24 @@ namespace IceProductionz\LaravelMigrator\Migration;
 
 interface Migration
 {
-    public function up();
+    /**
+     * Return name of the migration
+     *
+     * @return string
+     */
+    public function getName(): string;
 
-    public function down();
+    /**
+     * Upgrade migration code
+     *
+     * @return void
+     */
+    public function up(): void;
+
+    /**
+     * Downgrade migration code
+     *
+     * @return void
+     */
+    public function down(): void;
 }
