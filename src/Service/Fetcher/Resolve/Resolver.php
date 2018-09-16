@@ -1,8 +1,8 @@
 <?php
 
-namespace IceProductionz\LaravelMigrator\Service\Fetcher\Resolve;
+namespace IceProductionz\UniversalMigration\Service\Fetcher\Resolve;
 
-use IceProductionz\LaravelMigrator\Service\Fetcher\Config;
+use IceProductionz\UniversalMigration\Service\Fetcher\Config;
 
 class Resolver
 {
@@ -36,14 +36,22 @@ class Resolver
     /**
      * Get Class Name
      *
-     * @param string $file
+     * @param $file
      *
      * @return string
      */
     public function getClassName($file): string
     {
-        $className = preg_replace('/^' . preg_quote($this->config->getPrefix(), '/') . '/', '', $file);
-        $className .= preg_replace('/' . preg_quote($this->config->getSuffix(), '/') . '$/', '', $file);
+        $pathInfo = pathinfo($file);
+        $className = $pathInfo['filename'];
+
+        if ($this->config->getPrefix() !== '') {
+            $className = preg_replace('/^' . preg_quote($this->config->getPrefix(), '/') . '/', '', $className);
+        }
+
+        if ($this->config->getSuffix() !== '') {
+            $className .= preg_replace('/' . preg_quote($this->config->getSuffix(), '/') . '$/', '', $file);
+        }
 
         return  $this->config->getNamespace() . $className;
     }

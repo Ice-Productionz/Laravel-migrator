@@ -1,6 +1,6 @@
 <?php
 
-namespace IceProductionz\LaravelMigrator\Migration;
+namespace IceProductionz\UniversalMigration\Migration;
 
 interface Migration
 {

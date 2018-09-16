@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace IceProductionz\LaravelMigrator\Service\Provider;
+namespace IceProductionz\UniversalMigration\Service\Provider;
 
 use Pimple\Container;
 use Symfony\Component\EventDispatcher\EventDispatcher;

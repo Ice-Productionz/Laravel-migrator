@@ -1,9 +1,9 @@
 <?php
 
-namespace IceProductionz\LaravelMigrator\Service\Runner;
+namespace IceProductionz\UniversalMigration\Service\Runner;
 
-use IceProductionz\LaravelMigrator\Migration\Collection;
-use IceProductionz\LaravelMigrator\Migration\Manager\Manager;
+use IceProductionz\UniversalMigration\Migration\Collection;
+use IceProductionz\UniversalMigration\Migration\Manager\Manager;
 
 /**
  * Class Downgrade

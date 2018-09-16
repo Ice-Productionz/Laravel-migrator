@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace IceProductionz\LaravelMigrator;
+namespace IceProductionz\UniversalMigration;
 
-use IceProductionz\LaravelMigrator\Service\Provider\Console;
-use IceProductionz\LaravelMigrator\Service\Provider\Dispatcher;
+use IceProductionz\UniversalMigration\Service\Provider\Console;
+use IceProductionz\UniversalMigration\Service\Provider\Dispatcher;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 use Silex\Api\EventListenerProviderInterface;

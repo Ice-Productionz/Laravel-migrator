@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace IceProductionz\LaravelMigrator\Console\Provider;
+namespace IceProductionz\UniversalMigration\Console\Provider;
 
 use Pimple\Container;
 use Symfony\Component\Console\Application;

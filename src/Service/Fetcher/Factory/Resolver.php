@@ -1,9 +1,9 @@
 <?php
 
-namespace IceProductionz\LaravelMigrator\Service\Fetcher\Factory;
+namespace IceProductionz\UniversalMigration\Service\Fetcher\Factory;
 
-use IceProductionz\LaravelMigrator\Service\Fetcher\Config;
-use IceProductionz\LaravelMigrator\Service\Fetcher\Resolve\Resolver as Service;
+use IceProductionz\UniversalMigration\Service\Fetcher\Config;
+use IceProductionz\UniversalMigration\Service\Fetcher\Resolve\Resolver as Service;
 
 /**
  * Class Resolver

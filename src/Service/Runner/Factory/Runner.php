@@ -1,12 +1,13 @@
 <?php
 
-namespace IceProductionz\LaravelMigrator\Service\Runner\Factory;
+namespace IceProductionz\UniversalMigration\Service\Runner\Factory;
 
-use IceProductionz\LaravelMigrator\Exception\NotImplemented;
-use IceProductionz\LaravelMigrator\Migration\Collection;
-use IceProductionz\LaravelMigrator\Service\Runner\Downgrade;
-use IceProductionz\LaravelMigrator\Service\Runner\Runner as Service;
-use IceProductionz\LaravelMigrator\Service\Runner\Upgrade;
+use IceProductionz\UniversalMigration\Exception\NotImplemented;
+use IceProductionz\UniversalMigration\Migration\Collection;
+use IceProductionz\UniversalMigration\Migration\Manager\Manager;
+use IceProductionz\UniversalMigration\Service\Runner\Downgrade;
+use IceProductionz\UniversalMigration\Service\Runner\Runner as Service;
+use IceProductionz\UniversalMigration\Service\Runner\Upgrade;
 
 class Runner
 {
@@ -21,14 +22,14 @@ class Runner
      * @return Service
      * @throws NotImplemented
      */
-    public function make(string $type, Collection $migrations): Service
+    public function make(string $type, Collection $migrations, Manager $manager): Service
     {
         switch ($type) {
             case static::TYPE_UP;
-                return new Upgrade($migrations);
+                return new Upgrade($migrations, $manager);
 
             case static::TYPE_DOWN:
-                return new Downgrade($migrations);
+                return new Downgrade($migrations, $manager);
         }
         throw new NotImplemented('Requested type has not been implemented yet');
     }

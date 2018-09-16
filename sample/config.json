@@ -1,0 +1,7 @@
+{
+    "dir"       : "C:\\Users\\ice\\gitIceRepo\\Laravel-migrator\\sample\\Migrations\\",
+    "namespace" : "IceProductionzTests\\UniversalMigration\\Sample\\Migrations\\",
+    "manager"   : "IceProductionzTests\\UniversalMigration\\Sample\\Manager",
+    "prefix"    : "",
+    "suffix"    : ""
+}

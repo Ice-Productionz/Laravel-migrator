@@ -1,6 +1,6 @@
 <?php
 
-namespace IceProductionz\LaravelMigrator\Service\Runner;
+namespace IceProductionz\UniversalMigration\Service\Runner;
 
 interface Runner
 {

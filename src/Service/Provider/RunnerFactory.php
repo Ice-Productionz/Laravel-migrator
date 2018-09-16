@@ -1,10 +1,10 @@
 <?php
 
-namespace IceProductionz\LaravelMigrator\Service\Provider;
+namespace IceProductionz\UniversalMigration\Service\Provider;
 
 use Pimple\Container;
 
-class Runner implements \Pimple\ServiceProviderInterface
+class RunnerFactory implements \Pimple\ServiceProviderInterface
 {
 
     /**
@@ -17,8 +17,8 @@ class Runner implements \Pimple\ServiceProviderInterface
      */
     public function register(Container $pimple)
     {
-        $pimple['service.runner'] = function () {
-            return new \IceProductionz\LaravelMigrator\Service\Runner\Factory\Runner();
+        $pimple['service.runnerFactory'] = function () {
+            return new \IceProductionz\UniversalMigration\Service\Runner\Factory\Runner();
         };
     }
 }

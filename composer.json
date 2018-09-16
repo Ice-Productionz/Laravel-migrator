@@ -11,19 +11,21 @@
   ],
   "autoload": {
     "psr-4": {
-      "IceProductionz\\LaravelMigrator\\": "src/"
+      "IceProductionz\\UniversalMigration\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "IceProductionzTests\\LaravelMigrator\\Unit\\": "tests/unit/",
-      "IceProductionzTests\\LaravelMigrator\\Support\\": "tests/_support/"
+      "IceProductionzTests\\UniversalMigration\\Sample\\": "sample/",
+      "IceProductionzTests\\UniversalMigration\\Unit\\": "tests/unit/",
+      "IceProductionzTests\\UniversalMigration\\Support\\": "tests/_support/"
     },
     "classmap": [
       "tests/"
     ]
   },
   "require": {
+    "ext-json": "*",
     "symfony/console": "^4.1",
     "silex/api": "^2.3",
     "symfony/process": "^4.1",

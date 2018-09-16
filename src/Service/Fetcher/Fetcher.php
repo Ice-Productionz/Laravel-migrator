@@ -1,9 +1,9 @@
 <?php
 
-namespace IceProductionz\LaravelMigrator\Service\Fetcher;
+namespace IceProductionz\UniversalMigration\Service\Fetcher;
 
-use IceProductionz\LaravelMigrator\Migration\Collection;
-use IceProductionz\LaravelMigrator\Service\Fetcher\Factory\Resolver;
+use IceProductionz\UniversalMigration\Migration\Collection;
+use IceProductionz\UniversalMigration\Service\Fetcher\Factory\Resolver;
 
 /**
  * Interface Fetcher
@@ -42,7 +42,7 @@ class Fetcher
 
             $resolve->retrieveClass($file);
 
-            $className = $resolve->getClassName($resolve);
+            $className = $resolve->getClassName($file);
 
             $object = new $className;
 

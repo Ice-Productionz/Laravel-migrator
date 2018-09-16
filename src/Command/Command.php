@@ -1,6 +1,6 @@
 <?php
 
-namespace IceProductionz\LaravelMigrator\Command;
+namespace IceProductionz\UniversalMigration\Command;
 
 interface Command
 {

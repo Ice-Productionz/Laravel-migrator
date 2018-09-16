@@ -1,6 +1,6 @@
 <?php
 
-namespace IceProductionz\LaravelMigrator\Exception;
+namespace IceProductionz\UniversalMigration\Exception;
 
 class NotImplemented extends \RuntimeException implements Exception
 {

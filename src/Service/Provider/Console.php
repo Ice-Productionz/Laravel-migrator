@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace IceProductionz\LaravelMigrator\Service\Provider;
+namespace IceProductionz\UniversalMigration\Service\Provider;
 
-use IceProductionz\LaravelMigrator\Console\Provider\ContainerAwareApplication;
+use IceProductionz\UniversalMigration\Console\Provider\ContainerAwareApplication;
 use Pimple\Container;
 /**
  * Cilex Console Service Provider

@@ -1,6 +1,6 @@
 <?php
 
-namespace IceProductionz\LaravelMigrator\Service\Fetcher;
+namespace IceProductionz\UniversalMigration\Service\Fetcher;
 
 class Config
 {
@@ -25,19 +25,26 @@ class Config
     private $suffix;
 
     /**
+     * @var string
+     */
+    private $manager;
+
+    /**
      * Config constructor.
      *
+     * @param string $manager
      * @param string $dir
      * @param string $namespace
      * @param string $prefix
      * @param string $suffix
      */
-    public function __construct(string $dir, string $namespace ='\\', string $prefix='', string $suffix='')
+    public function __construct(string $manager, string $dir, string $namespace ='\\', string $prefix='', string $suffix='')
     {
         $this->dir = $dir;
         $this->namespace = $namespace;
         $this->prefix = $prefix;
         $this->suffix = $suffix;
+        $this->manager = $manager;
     }
 
     /**
@@ -70,5 +77,13 @@ class Config
     public function getSuffix(): string
     {
         return $this->suffix;
+    }
+
+    /**
+     * @return string
+     */
+    public function getManager(): string
+    {
+        return $this->manager;
     }
 }

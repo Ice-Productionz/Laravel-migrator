@@ -1,8 +1,8 @@
 <?php
 
-namespace IceProductionz\LaravelMigrator\Migration\Manager;
+namespace IceProductionz\UniversalMigration\Migration\Manager;
 
-use IceProductionz\LaravelMigrator\Migration\Migration;
+use IceProductionz\UniversalMigration\Migration\Migration;
 
 /**
  * Manage Migration completed
