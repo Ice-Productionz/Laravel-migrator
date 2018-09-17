@@ -10,11 +10,11 @@ use IceProductionz\UniversalMigration\Migration\Migration;
 interface Manager
 {
     /**
-     * @param $className
+     * @param Migration $migration
      *
      * @return bool
      */
-    public function isMigrated($className): bool;
+    public function isMigrated(Migration $migration): bool;
 
     /**
      * @param Migration $migration

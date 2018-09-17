@@ -2,19 +2,22 @@
 
 namespace IceProductionzTests\UniversalMigration\Sample;
 
+use IceProductionz\UniversalMigration\Migration\Manager\Manager as UniversalManager;
 use IceProductionz\UniversalMigration\Migration\Migration;
 
-class Manager implements \IceProductionz\UniversalMigration\Migration\Manager\Manager
+class Manager implements UniversalManager
 {
 
     /**
-     * @param $className
+     * @param Migration $migration
      *
      * @return bool
      */
-    public function isMigrated($className): bool
+    public function isMigrated(Migration $migration): bool
     {
-        return false;
+        echo  $migration->getName() . '() -> ' . __CLASS__ . '::' . __FUNCTION__ . "(): false\r\n";
+
+        return true;
     }
 
     /**
@@ -24,7 +27,7 @@ class Manager implements \IceProductionz\UniversalMigration\Migration\Manager\Ma
      */
     public function upgradeStarted(Migration $migration): void
     {
-        echo  __CLASS__ . '::' . __FUNCTION__ . '() -> ' . $migration->getName() . "\r\n";
+        echo  $migration->getName() . '() -> ' . __CLASS__ . '::' . __FUNCTION__ . "()\r\n";
     }
 
     /**
@@ -34,7 +37,7 @@ class Manager implements \IceProductionz\UniversalMigration\Migration\Manager\Ma
      */
     public function upgradeCompleted(Migration $migration): void
     {
-        echo  __CLASS__ . '::' . __FUNCTION__ . '() -> ' . $migration->getName() . "\r\n";
+        echo  $migration->getName() . '() -> ' . __CLASS__ . '::' . __FUNCTION__ . "()\r\n";
     }
 
     /**
@@ -44,7 +47,7 @@ class Manager implements \IceProductionz\UniversalMigration\Migration\Manager\Ma
      */
     public function downgradeStarted(Migration $migration): void
     {
-        echo  __CLASS__ . '::' . __FUNCTION__ . '() -> ' . $migration->getName() . "\r\n";
+        echo  $migration->getName() . '() -> ' . __CLASS__ . '::' . __FUNCTION__ . "()\r\n";
     }
 
     /**
@@ -54,6 +57,6 @@ class Manager implements \IceProductionz\UniversalMigration\Migration\Manager\Ma
      */
     public function downgradeCompleted(Migration $migration): void
     {
-        echo  __CLASS__ . '::' . __FUNCTION__ . '() -> ' . $migration->getName() . "\r\n";
+        echo  $migration->getName() . '() -> ' . __CLASS__ . '::' . __FUNCTION__ . "()\r\n";
     }
 }
