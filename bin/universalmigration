@@ -9,9 +9,22 @@ use IceProductionz\UniversalMigration\Service\Provider\Setup;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-if (!$loader = include __DIR__ . '/../vendor/autoload.php') {
+
+$loaderPath = '';
+$paths = [
+    __DIR__ . '/../vendor/autoload.php',
+    __DIR__ . '/../../vendor/autoload.php'
+];
+
+foreach ($paths as $path) {
+    if (file_exists($path)) {
+        $loaderPath = $path;
+    }
+}
+if (!$loader = include $loaderPath) {
     die('You must set up the project dependencies.');
 }
+
 $app = new Application('Universal - Migration', '1.0.0');
 /**
  * Setup Service providers
